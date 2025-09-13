@@ -41,7 +41,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-logo">Sharon</div>
 
-      {/* Desktop menu (always visible on large screens) */}
+      {/* Desktop menu */}
       <ul className="navbar-links">
         <li><a href="#hero" className={activeSection === 'hero' ? 'active' : ''}>Home</a></li>
         <li><a href="#about" className={activeSection === 'about' ? 'active' : ''}>About</a></li>
@@ -52,9 +52,10 @@ function Navbar() {
       </ul>
 
       <div className="navbar-actions">
-        <button className="download-btn">
+        {/* This is the corrected download link */}
+        <a href={process.env.PUBLIC_URL + '/Sharon cv.pdf'} download="Sharon-Mwandura-CV.pdf" className="download-btn">
           <FaDownload /> Download CV
-        </button>
+        </a>
         <button className="share-btn">
           <FaShareAlt /> Share
         </button>
@@ -79,9 +80,9 @@ function Navbar() {
           <li><a href="#contact" className={activeSection === 'contact' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Contact</a></li>
         </ul>
         <div className="navbar-actions">
-          <button className="download-btn">
+          <a href={process.env.PUBLIC_URL + '/Sharon cv.docx'} download="Sharon-Mwandura-CV.docx" className="download-btn">
             <FaDownload /> Download CV
-          </button>
+          </a>
           <button className="share-btn">
             <FaShareAlt /> Share
           </button>

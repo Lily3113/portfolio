@@ -71,11 +71,13 @@
   align-items: center;
   gap: 0.5rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
 }
 
 .download-btn {
   background-color: var(--primary-color);
   color: #fff;
+ 
 }
 
 .download-btn:hover {
