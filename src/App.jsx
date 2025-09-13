@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About'; 
 import Skills from './components/Skills';
+import Experience from './components/Experience';
 import './index.css';
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
       <main>
         <Hero />
         <About /> 
-        <Skills /> 
+        <Skills />
+         <Experience /> 
       </main>
     </div>
   );
