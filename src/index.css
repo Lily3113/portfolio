@@ -1,13 +1,65 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  /* Light Theme */
+  --primary-color: #5555c4;
+  --secondary-color: #e8e8ff;
+  --bg-color: #fff;
+  --card-bg: #fff;
+  --text-color: #333;
+  --text-secondary: #666;
+  --navbar-bg: #fff;
+  --btn-secondary-bg: #fff;
+  --btn-secondary-border: #eee;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-color: #eee;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body.dark-mode {
+  /* Dark Theme */
+  --primary-color: #5555c4;
+  --secondary-color: #1a1a2e;
+  --bg-color: #0d0d1a;
+  --card-bg: #161633;
+  --text-color: #f0f0f0;
+  --text-secondary: #b0b0b0;
+  --navbar-bg: #161633;
+  --btn-secondary-bg: #1a1a2e;
+  --btn-secondary-border: #444;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  --border-color: #333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* This ensures content sections fill the screen width */
+section {
+  width: 100%;
+  padding: 4rem 5%;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
 }
