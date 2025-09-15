@@ -1,33 +1,141 @@
-/* Footer Styles */
-.footer {
-  background-color: rgb(180, 180, 233);
+/* Amplitux-style Footer */
+.footer-amplitux {
+  background-color: var(--secondary-color);
+  padding: 4rem 5%;
   color: var(--text-color);
-  text-align: center;
-  padding: 1.5rem 5%;
-  border-top: 1px solid var(--border-color);
-  /* border-radius: 20px 20px 0 0; */
-  /* margin-top: 2rem; */
+  border-top: 2px solid var(--primary-color); 
 }
 
-.footer-content p {
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-col-main {
+  flex: 2;
+  min-width: 250px;
+}
+
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  display: block; 
+}
+
+.footer-col-main p {
   font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 150px;
+}
+
+.footer-col h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.footer-col ul {
+  list-style-type: none;
+  padding: 0;
   margin: 0;
-  color: white;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
 }
 
 .footer-socials {
+  background-color: var(--card-bg);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
+  gap: 1.5rem; /* Increased gap for better spacing */
+  box-shadow: var(--shadow);
 }
 
 .footer-socials a {
+  display: flex;
+  flex-direction: column; /* Stacks text on top of the icon */
+  align-items: center; /* Centers text and icon horizontally */
   color: var(--text-color);
-  font-size: 1.5rem;
+  text-decoration: none;
   transition: color 0.3s ease;
+}
+
+.footer-socials a .social-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem; /* Space between text and icon */
+}
+
+.footer-socials a svg {
+  font-size: 1.8rem;
 }
 
 .footer-socials a:hover {
   color: var(--primary-color);
+}
+
+.footer-socials a:hover .social-text {
+  color: var(--primary-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-col-main, .footer-col {
+    text-align: center;
+  }
+  .footer-col-main p {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+  .copyright {
+    order: 2;
+  }
 }

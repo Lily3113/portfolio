@@ -3,14 +3,17 @@ import { FaGithub } from 'react-icons/fa';
 import './Projects.css';
 
 // Import your images from the assets folder
-import project1Image from './about-page-1.png';
+import project1Image from './leaf-logo.png';
 import project2Image from './about-page-2.png';
 import project3Image from './about-page.png';
+
+// Import a new placeholder image for the new project
+import project4Image from './logo.png';
 
 const projectsData = [
   {
     image: project1Image,
-    title: 'Eco Basket and Online Musika',
+    title: 'Eco Basket an Online Musika',
     description: 'A platform for sustainable products and an online marketplace, connecting local sellers with customers.',
     githubLink: 'https://github.com/sharon/eco-basket-project'
   },
@@ -23,8 +26,14 @@ const projectsData = [
   {
     image: project3Image,
     title: 'Parksmart for Car Parks',
-    description: 'A solution for car park management, designed to streamline parking and payment processes cann be done in the comfort of your home.',
+    description: 'A solution for car park management, designed to streamline parking and payment processes.',
     githubLink: 'https://github.com/sharon/parksmart-app'
+  },
+  {
+    image: project4Image,
+    title: 'CyberShield Academy (WIP)',
+    description: 'A gamified cybersecurity learning platform aimed at educating users on recognizing phishing, weak passwords, social engineering, and safe internet habits through quizzes and mini-games.',
+    githubLink: '#'
   }
 ];
 

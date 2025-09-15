@@ -77,7 +77,7 @@
 .download-btn {
   background-color: var(--primary-color);
   color: #fff;
- 
+  text-decoration: none; /* Ensure no underline */
 }
 
 .download-btn:hover {

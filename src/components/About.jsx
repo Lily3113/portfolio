@@ -1,54 +1,54 @@
 import React from 'react';
-import { FaCode, FaPaintBrush, FaBullhorn, FaUsers } from 'react-icons/fa';
+import { FaCode, FaPaintBrush, FaBullhorn, FaUsers, FaLock } from 'react-icons/fa';
 import './About.css';
 
 function About() {
   return (
     <section id="about" className="about-section">
       <h2 className="section-title">About Me</h2>
-      <h3>Crafting Digital Solutions With Purpose</h3>
+      <h3>Creating Digital Experiences That Are Safe and Seamless</h3>
       <p>
-        Self-motivated Web Developer & UI/UX Designer with a strong foundation in modern front-end technologies and a creative eye for user-centered design. Known for adaptability, empathy in design, and a fast learning curve.
+        Self-motivated and adaptable professional with a diverse skill set spanning **Web Development**, **UI/UX Design**, **Digital Marketing**, and **Cybersecurity**. Known for a strong work ethic, empathy in design, and a fast learning curve.
       </p>
       <div className="about-cards">
         <div className="about-card">
           <div className="card-icon"><FaCode /></div>
           <h4>Web Development</h4>
-          <p>React, JavaScript, HTML, CSS, and modern frameworks.</p>
+          <p>Proficient in React, JavaScript, HTML, and CSS to build modern and responsive applications.</p>
         </div>
         <div className="about-card">
           <div className="card-icon"><FaPaintBrush /></div>
           <h4>UI/UX Design</h4>
-          <p>Figma, wireframing, prototyping, and user research.</p>
+          <p>Skilled in Figma for wireframing, prototyping, and creating user-centered interfaces.</p>
         </div>
         <div className="about-card">
           <div className="card-icon"><FaBullhorn /></div>
           <h4>Digital Marketing</h4>
-          <p>Social media strategy, content creation, and SEO.</p>
+          <p>Experienced in social media strategy, content creation, and Search Engine Optimization (SEO).</p>
         </div>
         <div className="about-card">
-          <div className="card-icon"><FaUsers /></div>
-          <h4>Community Impact</h4>
-          <p>Youth mentoring and coding education through Uncommon.org.</p>
+          <div className="card-icon"><FaLock /></div>
+          <h4>Cybersecurity Analysis</h4>
+          <p>Focused on identifying vulnerabilities and implementing best practices for secure digital solutions.</p>
         </div>
       </div>
       <div className="about-details">
         <div className="about-column">
           <h4>My Journey</h4>
           <p>
-            My passion for technology started at Uncommon.org, where I learned web development, UI/UX design, and digital marketing. Through hands-on experience and diverse roles, I've developed a unique blend of technical and creative skills.
+            My journey into technology began at Uncommon.org, where I gained hands-on experience in web development and UI/UX design. Through continuous learning and diverse roles, I've cultivated a unique blend of technical and creative skills, with a recent focus on cybersecurity.
           </p>
           <p>
-            Currently, I'm giving back to the community as a Youth Coding Mentor at Uncommon.org, teaching children basic coding concepts and helping organize weekend tech sessions for underprivileged youth.
+            Currently, I'm contributing to the community as a Youth Coding Mentor at Uncommon.org, teaching basic coding concepts and helping organize tech workshops for underprivileged youth.
           </p>
         </div>
         <div className="about-column">
           <h4>Core Values</h4>
           <ul>
-            <li>Create user-centered designs with empathy</li>
-            <li>Write clean, maintainable, and accessible code</li>
-            <li>Embrace continuous learning and growth</li>
-            <li>Mentor and uplift the next generation</li>
+            <li>Create user-centered designs with empathy.</li>
+            <li>Write clean, maintainable, and secure code.</li>
+            <li>Embrace continuous learning and adaptability.</li>
+            <li>Mentor and uplift the next generation in tech.</li>
           </ul>
         </div>
       </div>

@@ -56,9 +56,7 @@ function Navbar() {
         <a href={process.env.PUBLIC_URL + '/Sharon cv.pdf'} download="Sharon-Mwandura-CV.pdf" className="download-btn">
           <FaDownload /> Download CV
         </a>
-        <button className="share-btn">
-          <FaShareAlt /> Share
-        </button>
+       
         <button className="theme-toggle-btn" onClick={toggleTheme}>
           {darkMode ? <FaSun /> : <FaMoon />}
         </button>
