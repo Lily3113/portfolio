@@ -8,7 +8,7 @@ function About() {
       <h2 className="section-title">About Me</h2>
       <h3>Creating Digital Experiences That Are Safe and Seamless</h3>
       <p>
-        Self-motivated and adaptable professional with a diverse skill set spanning **Web Development**, **UI/UX Design**, **Digital Marketing**, and **Cybersecurity**. Known for a strong work ethic, empathy in design, and a fast learning curve.
+        Self-motivated and adaptable professional with a diverse skill set spanning Web Development, UI/UX Design, Digital Marketing, and Cybersecurity. Known for a strong work ethic, empathy in design, and a fast learning curve.
       </p>
       <div className="about-cards">
         <div className="about-card">

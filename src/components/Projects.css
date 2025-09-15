@@ -28,12 +28,12 @@
 
 .projects-container::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .project-card {
   flex-shrink: 0;
-  width: 320px; 
+  width: 345px; 
   background-color: var(--secondary-color);
   border-radius: 12px;
   overflow: hidden;

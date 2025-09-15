@@ -2,26 +2,8 @@ import React from 'react';
 import './Experience.css';
 
 const experienceData = [
-  {
-    role: 'Shop Assistant',
-    company: 'Rira Logistics',
-    date: 'June 2023 – December 2023',
-    description: [
-      'Received, stocked, and arranged inventory.',
-      'Guided customers and offered product suggestions.',
-      'Assisted in pricing audits and issue resolution.'
-    ]
-  },
-  {
-    role: 'Salesperson',
-    company: 'CN Baazar (Cosmetic Shop)',
-    date: 'February 2023 – June 2023',
-    description: [
-      'Served in-store customers and met monthly targets.',
-      'Promoted beauty products within CBD.',
-      'Processed client orders in and around Harare.'
-    ]
-  },
+ 
+ 
   {
     role: 'Agent (Team Leader)',
     company: 'Agricultural Finance Corporation (AFC)',
@@ -32,6 +14,29 @@ const experienceData = [
       'Led a small team to deliver daily banking services.'
     ]
   },
+ 
+  {
+    role: 'Salesperson',
+    company: 'CN Baazar (Cosmetic Shop)',
+    date: 'February 2023 – June 2023',
+    description: [
+      'Served in-store customers and met monthly targets.',
+      'Promoted beauty products within CBD.',
+      'Processed client orders in and around Harare.'
+    ]
+  },
+ {
+    role: 'Shop Assistant',
+    company: 'Rira Logistics',
+    date: 'June 2023 – December 2023',
+    description: [
+      'Received, stocked, and arranged inventory.',
+      'Guided customers and offered product suggestions.',
+      'Assisted in pricing audits and issue resolution.'
+    ]
+  },
+
+ 
   {
     role: 'Youth Coding Mentor',
     company: 'Uncommon.org / Community Projects',
