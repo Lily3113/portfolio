@@ -16,10 +16,10 @@
 }
 
 .experience-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
   gap: 2rem;
-  align-items: center;
+  justify-items: center;
 }
 
 .experience-card {
@@ -75,11 +75,13 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .experience-container {
+    grid-template-columns: 1fr; /* One column on small screens */
+  }
   .experience-header {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .experience-date {
     margin-top: 0.25rem;
   }
