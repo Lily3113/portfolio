@@ -1,141 +1,92 @@
-/* Amplitux-style Footer */
-.footer-amplitux {
+/* Footer Styles - Mimicking the example */
+.footer-mimic {
   background-color: var(--secondary-color);
+  color: var(--text-secondary);
   padding: 4rem 5%;
-  color: var(--text-color);
-  border-top: 2px solid var(--primary-color); 
+  border-top: 7px solid var(--primary-color);
 }
 
-.footer-top {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.footer-top-mimic {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  border-bottom: 1px solid var(--border-color);
   padding-bottom: 2rem;
-  margin-bottom: 2rem;
+  /* This line was updated to make the border more visible */
+  border-bottom: 2px solid var(--border-color);
 }
 
-.footer-col-main {
-  flex: 2;
-  min-width: 250px;
+.footer-col-mimic h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 1rem;
 }
 
 .footer-logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--text-color);
-  margin-bottom: 0.5rem;
-  display: block; 
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+  display: block;
 }
 
-.footer-col-main p {
+.footer-col-mimic p {
   font-size: 0.9rem;
-  color: var(--text-secondary);
   line-height: 1.6;
 }
 
-.footer-col {
-  flex: 1;
-  min-width: 150px;
+.footer-col-mimic p a {
+  color: var(--primary-color);
+  text-decoration: none;
 }
 
-.footer-col h4 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: var(--text-color);
-}
-
-.footer-col ul {
+.footer-col-mimic ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
 }
 
-.footer-col ul li {
+.footer-col-mimic ul li {
   margin-bottom: 0.5rem;
 }
 
-.footer-col ul li a {
-  text-decoration: none;
+.footer-col-mimic ul li a {
   color: var(--text-secondary);
-  font-size: 1rem;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.footer-col ul li a:hover {
+.footer-col-mimic ul li a:hover {
   color: var(--primary-color);
 }
 
-.footer-bottom {
+.footer-bottom-mimic {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Centered the copyright and social links */
   align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column; /* Stacked them vertically */
+  padding-top: 2rem;
   gap: 1rem;
 }
 
-.copyright {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  margin: 0;
-}
-
-.footer-socials {
-  background-color: var(--card-bg);
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  display: flex;
-  gap: 1.5rem; /* Increased gap for better spacing */
-  box-shadow: var(--shadow);
-}
-
-.footer-socials a {
-  display: flex;
-  flex-direction: column; /* Stacks text on top of the icon */
-  align-items: center; /* Centers text and icon horizontally */
+.footer-socials-mimic a {
   color: var(--text-color);
-  text-decoration: none;
+  font-size: 1.5rem;
+  margin-right: 1rem;
   transition: color 0.3s ease;
 }
 
-.footer-socials a .social-text {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  margin-bottom: 0.25rem; /* Space between text and icon */
-}
-
-.footer-socials a svg {
-  font-size: 1.8rem;
-}
-
-.footer-socials a:hover {
-  color: var(--primary-color);
-}
-
-.footer-socials a:hover .social-text {
+.footer-socials-mimic a:hover {
   color: var(--primary-color);
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .footer-top {
-    flex-direction: column;
+  .footer-top-mimic {
+    grid-template-columns: 1fr;
     text-align: center;
   }
-  .footer-col-main, .footer-col {
-    text-align: center;
-  }
-  .footer-col-main p {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .footer-bottom {
+  .footer-bottom-mimic {
     flex-direction: column;
-    align-items: center;
-  }
-  .copyright {
-    order: 2;
+    text-align: center;
+    gap: 1rem;
   }
 }

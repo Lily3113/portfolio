@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaLinkedinIn, FaGithub, FaEnvelope } from 'react-icons/fa';
-import profileImage from '../components/sem.jpg'; 
+import profileImage from '../components/logo back.png'; 
 import './Hero.css';
 
 function Hero() {
