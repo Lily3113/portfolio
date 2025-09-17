@@ -1,93 +1,71 @@
 import React, { useState, useEffect } from 'react';
-import { FaDownload, FaShareAlt, FaMoon, FaSun, FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import '../Navbar.css';
 
 function Navbar() {
-  const [darkMode, setDarkMode] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle('dark-mode');
-  };
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('hero');
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsOpen(!isOpen);
+  };
+
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+    setIsOpen(false); // Close menu after clicking a link
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = document.querySelectorAll('section');
-      const scrollPosition = window.scrollY + 100;
+      // Get all sections on the page. Ensure these IDs match your section IDs in the HTML.
+      const sections = ['hero', 'about', 'skills', 'experience', 'projects', 'contact'];
+      let currentActive = 'hero'; // Default to 'hero' if nothing else is active
 
-      sections.forEach(section => {
-        if (
-          section.offsetTop <= scrollPosition &&
-          section.offsetTop + section.offsetHeight > scrollPosition
-        ) {
-          setActiveSection(section.id);
+      // Loop through sections in reverse to handle scrolling up
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sectionId = sections[i];
+        const section = document.getElementById(sectionId);
+        
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          // Check if the section's top is in or above the viewport
+          if (rect.top <= window.innerHeight / 2) {
+            currentActive = sectionId;
+            break; 
+          }
         }
-      });
+      }
+
+      // Update the active link state if it has changed
+      if (currentActive !== activeLink) {
+        setActiveLink(currentActive);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [activeLink]);
 
   return (
-    <nav className="navbar">
-      <div className="navbar-logo">Sharon</div>
-
-      {/* Desktop menu */}
-      <ul className="navbar-links">
-        <li><a href="#hero" className={activeSection === 'hero' ? 'active' : ''}>Home</a></li>
-        <li><a href="#about" className={activeSection === 'about' ? 'active' : ''}>About</a></li>
-        <li><a href="#skills" className={activeSection === 'skills' ? 'active' : ''}>Skills</a></li>
-        <li><a href="#experience" className={activeSection === 'experience' ? 'active' : ''}>Experience</a></li>
-        <li><a href="#projects" className={activeSection === 'projects' ? 'active' : ''}>Projects</a></li>
-        <li><a href="#contact" className={activeSection === 'contact' ? 'active' : ''}>Contact</a></li>
+    <nav className="navbar-pill">
+      <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
+        <li><a href="#hero" onClick={() => handleLinkClick('hero')} className={activeLink === 'hero' ? 'active-link' : ''}>Home</a></li>
+        <li><a href="#about" onClick={() => handleLinkClick('about')} className={activeLink === 'about' ? 'active-link' : ''}>About</a></li>
+        <li><a href="#skills" onClick={() => handleLinkClick('skills')} className={activeLink === 'skills' ? 'active-link' : ''}>Skills</a></li>
+        <li><a href="#experience" onClick={() => handleLinkClick('experience')} className={activeLink === 'experience' ? 'active-link' : ''}>Experience</a></li>
+        <li><a href="#projects" onClick={() => handleLinkClick('projects')} className={activeLink === 'projects' ? 'active-link' : ''}>Projects</a></li>
+        <li><a href="#contact" onClick={() => handleLinkClick('contact')} className={activeLink === 'contact' ? 'active-link' : ''}>Contact</a></li>
       </ul>
-
-      <div className="navbar-actions">
-        {/* This is the corrected download link */}
-        <a href={process.env.PUBLIC_URL + '/Sharon cv.pdf'} download="Sharon-Mwandura-CV.pdf" className="download-btn">
-          <FaDownload /> Download CV
-        </a>
-       
-        <button className="theme-toggle-btn" onClick={toggleTheme}>
-          {darkMode ? <FaSun /> : <FaMoon />}
-        </button>
+      
+      <div className="navbar-cta">
+        <a href="/assets/sharon cv.pdf" download className="cta-button">Resume</a>
       </div>
 
-      {/* Mobile toggle button */}
-      <button className="menu-toggle-btn" onClick={toggleMenu}>
-        {isMenuOpen ? <FaTimes /> : <FaBars />}
-      </button>
-
-      {/* Mobile menu */}
-      <div className={`navbar-mobile-menu ${isMenuOpen ? 'open' : ''}`}>
-        <ul className="navbar-links">
-          <li><a href="#hero" className={activeSection === 'hero' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Home</a></li>
-          <li><a href="#about" className={activeSection === 'about' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>About</a></li>
-          <li><a href="#skills" className={activeSection === 'skills' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Skills</a></li>
-          <li><a href="#experience" className={activeSection === 'experience' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Experience</a></li>
-          <li><a href="#projects" className={activeSection === 'projects' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Projects</a></li>
-          <li><a href="#contact" className={activeSection === 'contact' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Contact</a></li>
-        </ul>
-        <div className="navbar-actions">
-          <a href={process.env.PUBLIC_URL + '/Sharon cv.docx'} download="Sharon-Mwandura-CV.docx" className="download-btn">
-            <FaDownload /> Download CV
-          </a>
-          <button className="share-btn">
-            <FaShareAlt /> Share
-          </button>
-          <button className="theme-toggle-btn" onClick={toggleTheme}>
-            {darkMode ? <FaSun /> : <FaMoon />}
-          </button>
-        </div>
+      <div className="hamburger" onClick={toggleMenu}>
+        {isOpen ? <FaTimes /> : <FaBars />}
       </div>
     </nav>
   );

@@ -48,7 +48,7 @@
 }
 
 .project-image {
-  width: 100%;
+  width: 95%;
   height: 255px;
   object-fit: cover;
   display: block;
@@ -94,7 +94,7 @@
 }
 
 :root {
-  --border-color: #e0e0e0; /* Light mode border */
+  --border-color: wp33p1#e0e0e0; /* Light mode border */
 }
 
 [data-theme="dark"] {

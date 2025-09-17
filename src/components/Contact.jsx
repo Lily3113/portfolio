@@ -1,41 +1,43 @@
 import React from 'react';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaLinkedin, FaWhatsapp, FaGithub } from 'react-icons/fa';
 import './Contact.css';
 
-function Contact() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Thank you for your message! This form is a placeholder and doesn't send emails yet.");
-  };
+// Correctly importing the image file
+import eyeIcon from './logo back.png'; 
 
+function Contact() {
   return (
-    <section id="contact" className="contact-section">
-      <h2 className="section-title">Get In Touch</h2>
-      <div className="contact-container">
-        <div className="contact-form-container">
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit" className="submit-btn">Send Message</button>
-          </form>
+    <section id="contact" className="contact-container">
+      <div className="contact-main">
+        <div className="contact-left">
+          <h1>
+            GET IN<br />
+            TOUCH
+          </h1>
+          {/* Using the imported image variable */}
+          <img src={eyeIcon} alt="Logo" className="logo-icon" />
         </div>
-        <div className="contact-info-container">
-          <p className="contact-intro">
-            I'm currently available for new opportunities. Feel free to send me a message!
+        <div className="contact-right">
+          <p className="intro-text">
+            Blending creativity and security — I design user-friendly interfaces, build secure web solutions, analyze cyber risks, and drive digital growth through strategic marketing.
           </p>
-          <ul className="contact-details">
-            <li><FaMapMarkerAlt /> Harare, Zimbabwe</li>
-            <li><FaPhone /> (+263) 777 742 901</li>
-            <li><FaEnvelope /> mwandurasharone@gmail.com</li>
-          </ul>
-          <div className="social-links-contact">
-            <a href="www.linkedin.com/in/sharon-e-mwandura-3a576234b" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-            <a href="https://wa.me/(+263) 777 742 901" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
-            <a href="https://github.com/Lily3113" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+          <div className="social-section">
+            <p className="social-label">SOCIAL LINKS</p>
+            {/* Updated with your actual LinkedIn URL, adding 'https://' for a valid link */}
+            <a href="https://www.linkedin.com/in/sharon-e-mwandura-3a576234b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            {/* Updated with your actual GitHub URL */}
+            <a href="https://github.com/Lily3113" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+            {/* Updated with your actual email, using 'mailto:' for a valid link */}
+            <a href="mailto:mwandurasharone@gmail.com">Email</a>
+            {/* Updated with your actual WhatsApp number, removing parentheses */}
+            <a href="https://wa.me/263777742901" target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </div>
         </div>
       </div>
+      <a href="mailto:mwandurasharone@gmail.com" className="email-link">
+        mwandurasharone@gmail.com
+      </a>
     </section>
   );
 }
