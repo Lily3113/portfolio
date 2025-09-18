@@ -6,8 +6,6 @@ import './Projects.css';
 import project1Image from './leaf-logo.png';
 import project2Image from './about-page-2.png';
 import project3Image from './about-page.png';
-
-// Import a new placeholder image for the new project
 import project4Image from './logo.png';
 
 const projectsData = [
@@ -44,7 +42,9 @@ function Projects() {
       <div className="projects-container">
         {projectsData.map((project, index) => (
           <div key={index} className="project-card">
-            <img src={project.image} alt={project.title} className="project-image" />
+            <div className="project-image-container">
+              <img src={project.image} alt={project.title} className="project-image" />
+            </div>
             <div className="project-content">
               <h3>{project.title}</h3>
               <p>{project.description}</p>

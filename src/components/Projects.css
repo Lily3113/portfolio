@@ -1,102 +1,124 @@
-/* Projects Section */
+/* Projects Section Styles */
 .projects-section {
-  padding: 4rem 5%;
+  padding: 80px 5%;
+  background-color: #f0f2f5; /* Light gray background to match the screenshot */
   text-align: center;
-  background-color: var(--card-bg);
-  border-radius: 20px;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Prevents horizontal scrollbars on the section itself */
 }
 
-.projects-section .section-title {
+.section-title {
   font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  color: var(--text-color);
+  color: #333;
+  margin-bottom: 4rem;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
 }
 
 .projects-container {
   display: flex;
-  flex-wrap: nowrap;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  scroll-snap-type: x mandatory;
   gap: 2rem;
-  overflow-x: auto; 
-  padding-bottom: 1rem;
+  padding-bottom: 20px; /* Space for scrollbar */
+  -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #999 #f0f2f5; /* Firefox */
 }
 
-/* Hide the scrollbar for a cleaner look (optional) */
+/* Hide scrollbar for Chrome, Safari, and Opera */
 .projects-container::-webkit-scrollbar {
   height: 8px;
 }
 
 .projects-container::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color);
-  border-radius: 8px;
+  background-color: #999;
+  border-radius: 4px;
+}
+
+.projects-container::-webkit-scrollbar-track {
+  background-color: #f0f2f5;
 }
 
 .project-card {
-  flex-shrink: 0;
-  width: 345px; 
-  background-color: var(--secondary-color);
+  flex-shrink: 0; /* Prevents cards from shrinking */
+  width: 300px; /* Fixed width for each card */
+  background-color: #fff;
   border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: center;
 }
 
 .project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project-image-container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem; /* Padding inside the image container */
+  border-bottom: 1px solid #eee;
 }
 
 .project-image {
-  width: 95%;
-  height: 255px;
-  object-fit: cover;
-  display: block;
-  /* This creates the distinct line between the image and content */
-  border-bottom: 2px solid var(--card-bg); 
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .project-content {
   padding: 1.5rem;
+  text-align: left;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-content h3 {
   font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--primary-color);
+  color: #555;
   margin-bottom: 0.5rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
 }
 
 .project-content p {
-  font-size: 1rem;
-  color: var(--text-secondary);
+  font-size: 0.9rem;
+  color: #777;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.project-links {
-  display: flex;
-  justify-content: center; 
+  flex-grow: 1;
+  margin-bottom: 1rem;
 }
 
 .project-links a {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
+  color: #337ab7;
   text-decoration: none;
-  color: var(--primary-color);
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .project-links a:hover {
-  color: var(--text-color);
+  color: #23527c;
 }
 
-:root {
-  --border-color: wp33p1#e0e0e0; /* Light mode border */
-}
-
-[data-theme="dark"] {
-  --border-color: #333a45; /* Dark mode border */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 60px 5%;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
 }

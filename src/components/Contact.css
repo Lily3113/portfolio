@@ -1,86 +1,142 @@
+/* Contact.css */
 .contact-container {
-  padding: 80px 10%;
-  background-color: var(--secondary-color); /* Now uses your background color variable */
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  padding: 4rem 8%;
+  box-sizing: border-box;
 }
 
-.contact-main {
+/* Left heading fix */
+.contact-left .heading {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1200px;
+  flex-direction: column;
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
-.contact-left {
-  flex: 1;
-  text-align: right;
-}
-
-.contact-left h1 {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 5rem;
-  font-weight: normal;
-  line-height: 0.9;
+.get-in {
+  font-size: 6rem;
   letter-spacing: -2px;
-  color: var(--text-color);
-  margin-bottom: 20px;
+}
+
+.touch-line {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .logo-icon {
-  width: 100px;
+  width: 90px; /* Adjust size to visually match text height */
   height: auto;
 }
 
-.contact-right {
-  flex: 1;
-  text-align: left;
-  padding-top: 1rem;
+.touch {
+  font-size: 6rem;
+  letter-spacing: -2px;
 }
 
-.contact-right p, .contact-right a {
-  font-family: Arial, sans-serif;
-  color: var(--text-secondary);
-  line-height: 1.5;
+
+.contact-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 3rem;
+}
+
+.contact-left h1 {
+  font-family: 'Georgia', serif;
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+  letter-spacing: -2px;
+}
+
+.logo-icon {
+  display: block;
+  width: 150px;
+  margin: 2rem 0 0 0;
+}
+
+.contact-right {
+  max-width: 400px;
 }
 
 .intro-text {
-  font-style: italic;
-  margin-bottom: 40px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
 }
 
 .social-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 5px;
+  gap: 0.5rem;
 }
 
 .social-label {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: bold;
   letter-spacing: 1px;
-  color: var(--text-secondary);
-  margin-bottom: 5px;
-  text-transform: uppercase;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
 }
 
 .social-section a {
   text-decoration: none;
   color: var(--text-color);
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.social-section a:hover {
+  color: var(--primary-color);
 }
 
 .email-link {
-  font-family: Arial, sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-decoration: none;
-  border-bottom: 2px solid var(--text-color);
   color: var(--text-color);
-  margin-top: 50px;
-  display: block;
-  text-align: center;
+  border-bottom: 1px solid var(--text-color);
+  padding-bottom: 4px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.email-link:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .contact-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-left h1 {
+    font-size: 4rem;
+  }
+
+  .logo-icon {
+    margin: 1.5rem auto 0 auto;
+  }
+
+  .contact-right {
+    margin-top: 2rem;
+    max-width: 100%;
+  }
 }
