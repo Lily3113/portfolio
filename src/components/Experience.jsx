@@ -35,10 +35,11 @@ function Experience() {
           </p>
           <div className="awards-box">
             <h4>Certificates</h4>
-            <p>CPR, AED and First Aid</p>
+             <p>Work Readiness</p>
             <p>Business Planning</p>
             <p>ICT Digital Literacy</p>
-            <p>Work Readiness</p>
+            <p>CPR, AED and First Aid</p>
+            <p>Internet and Social Media Safety</p>
             <p>Effective Communication in the Workplace</p>
           </div>
         </div>
