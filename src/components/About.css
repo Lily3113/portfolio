@@ -1,0 +1,163 @@
+.about-section {
+  padding: 4rem 5%;
+}
+
+.about-section h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-color);
+  text-align: center;
+  margin-top: 0;
+}
+
+.about-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.about-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.about-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.about-card:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-section > p {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  color: var(--text-secondary);
+}
+
+.about-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.about-card {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  width: 250px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid var(--border-color);
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.about-card h4 {
+  margin: 0.5rem 0;
+}
+
+.about-card p {
+  color: var(--text-secondary);
+}
+
+.about-details {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.about-column {
+  flex: 1;
+  max-width: 500px;
+}
+
+.about-column h4 {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+.about-column p, .about-column li {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.about-column ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.about-column li::before {
+  content: '✓';
+  color: var(--primary-color);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Read More / Read Less Button */
+.read-more-btn {
+  margin-top: 10px;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background: #005bb5;
+}
+
+/* Smooth slide animation for mobile toggle */
+.toggle-content {
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.toggle-content.expanded {
+  max-height: 1000px; /* large enough to show all content */
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .toggle-content {
+    max-height: 80px; /* collapsed height on mobile */
+    opacity: 0.9;
+  }
+}
+
+@media (max-width: 768px) {
+  .toggle-content {
+    max-height: 60px; /* show only first part of text */
+    opacity: 1;
+  }
+
+  .toggle-content.expanded {
+    max-height: 1000px; /* show full text when expanded */
+  }
+}

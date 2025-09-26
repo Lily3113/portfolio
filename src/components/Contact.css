@@ -1,0 +1,259 @@
+:root {
+  --primary-gradient: linear-gradient(var(--primary-color)); /* Adjusted gradient to match image */
+  --input-border-color: #e0e0e0;
+  --input-focus-border: #a050f0; /* Color inspired by gradient start */
+  --text-color-dark: #333;
+  --text-color-medium: #555;
+  --text-color-light: #888;
+  --background-light-grey: #f8f8f8; /* Background of the overall section */
+  --card-background: #ffffff; /* Background for the form/info panels */
+  --social-icon-color: #555; /* Default social icon color */
+  --social-icon-hover: #0077ff; /* Hover color for social icons */
+}
+
+.contact-section {
+  padding: 80px 5%;
+  background: var(--background-light-grey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* Ensures it takes up a good portion of the viewport */
+}
+
+.contact-container {
+  display: flex;
+  background-color: var(--card-background);
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* Ensures rounded corners are visible */
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Left side: Contact Info Panel */
+.contact-info-panel {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color-dark);
+  margin-bottom: 20px;
+}
+
+.contact-description {
+  font-size: 1rem;
+  color: var(--text-color-medium);
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 400px;
+}
+
+.intro-text { /* Style for the new descriptive text */
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color-medium);
+  margin-bottom: 30px;
+  max-width: 400px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Spacing between contact detail items */
+  margin-bottom: 40px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start; /* Aligns icon and text nicely */
+  gap: 15px;
+  font-size: 1rem;
+  color: var(--text-color-medium);
+  line-height: 1.4;
+}
+
+.detail-icon {
+  font-size: 1.5rem;
+  color: var(--text-color-light); /* Lighter color for icons as per design */
+  flex-shrink: 0; /* Prevents icon from shrinking */
+  margin-top: 2px; /* Slight adjustment for visual alignment */
+}
+
+.social-links-block {
+  margin-top: 20px;
+}
+
+.social-label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--text-color-light);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px; /* Space between social icons */
+}
+
+.social-icons a {
+  font-size: 1.8rem; /* Size for social media icons */
+  color: var(--social-icon-color);
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #6a3ab2;
+}
+
+
+/* Right side: Contact Form Panel */
+.contact-form-panel {
+  flex: 1;
+  padding: 50px;
+  background: #fdfdfd; /* Slightly different background for form section */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Spacing between form groups */
+}
+
+.form-group {
+  margin-bottom: 0; /* Reset margin as gap handles spacing */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 8px; /* Slightly more rounded than default */
+  font-size: 1rem;
+  color: var(--text-color-dark);
+  background-color: #fff; /* Ensure white background for inputs */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-color-light); /* Lighter placeholder text */
+  font-style: italic; /* Mimics the design's placeholder style */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--input-focus-border);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(160, 80, 240, 0.1); /* Subtle focus glow */
+}
+
+.form-group textarea {
+  resize: vertical; /* Allows vertical resizing */
+  min-height: 120px; /* Minimum height for message box */
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary-gradient); /* Gradient button as in design */
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.submit-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .contact-container {
+    flex-direction: column; /* Stacks panels vertically on smaller screens */
+    border-radius: 0; /* Remove rounded corners for full width */
+    box-shadow: none; /* Remove shadow to blend with background */
+  }
+
+  .contact-info-panel,
+  .contact-form-panel {
+    padding: 40px;
+    width: 100%; /* Full width */
+  }
+
+  .contact-form-panel {
+    background: var(--card-background); /* Ensure consistent background after stacking */
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-description {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-section {
+    padding: 40px 3%; /* Reduced padding on very small screens */
+  }
+
+  .contact-info-panel,
+  .contact-form-panel {
+    padding: 30px;
+  }
+
+  .contact-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .contact-description {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+  }
+
+  .detail-item {
+    font-size: 0.9rem;
+  }
+
+  .detail-icon {
+    font-size: 1.3rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+
+  .submit-button {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+}

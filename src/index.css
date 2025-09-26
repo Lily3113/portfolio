@@ -1,0 +1,52 @@
+:root {
+  /* Light Theme */
+  --primary-color: #5555c4;
+  --secondary-color: #e8e8ff;
+  --bg-color: #fff;
+  --card-bg: #fff;
+  --text-color: #333;
+  --text-secondary: #666;
+  --navbar-bg: #fff;
+  --btn-secondary-bg: #fff;
+  --btn-secondary-border: #eee;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-color: #eee;
+}
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* This ensures content sections fill the screen width */
+section {
+  width: 100%;
+  padding: 4rem 5%;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}

@@ -1,0 +1,66 @@
+.footer-section {
+  position: relative;
+  background: linear-gradient(to right, #6a11cb, #2575fc); /* Dark blue to purple gradient */
+  color: #fff;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* This hides any overflow from the wave */
+}
+
+.wave-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(-99%); /* Pull the wave up to sit just above the main footer content */
+  z-index: 1;
+}
+
+.wave-container svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-text p {
+  margin: 0;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social-icons a {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+  color: #d1c4e9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}

@@ -1,0 +1,123 @@
+/* Navbar Container */
+.navbar-pill {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center; /* This centers the links and the button as a group */
+  align-items: center;
+  padding: 0.1rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: fit-content;
+  margin: 2rem auto;
+  font-family: Arial, sans-serif;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+/* Links */
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-links li a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-links li a:hover {
+  color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+.navbar-links li a.active-link {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* CTA */
+.navbar-cta {
+  /* This margin separates the button from the last link */
+  margin-left: 2rem;
+}
+
+.cta-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: bold;
+  padding: 0.6rem 1rem;
+
+  border-radius: 50px;
+  text-decoration: none;
+   display: flex;
+  justify-content: center;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #6a3ab2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar-pill {
+    justify-content: space-between;
+    width: 90%;
+    padding: 0.75rem 1.5rem;
+    margin: 1rem auto;
+    max-width: none;
+  }
+  
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 1rem;
+    width: 90%;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .navbar-links li {
+    margin: 0.5rem 0;
+  }
+
+  .navbar-cta {
+    margin-left: 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
