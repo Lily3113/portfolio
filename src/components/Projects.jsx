@@ -28,8 +28,8 @@ const projectsData = [
   {
     image: project1Image,
     title: 'Eco Basket an Online Musika',
-    description: 'A platform for sustainable products and an online marketplace, connecting local sellers with customers.',
-    githubLink: 'https://github.com/Lily3113/market-.git',
+    description: 'Developed a sustainable products marketplace using HTML & CSS, connecting local sellers with customers.',
+    vercelLink: 'https://market-weld-kappa.vercel.app/',
     // Optional: Add a placeholder for Vercel link if it exists
   },
     {
